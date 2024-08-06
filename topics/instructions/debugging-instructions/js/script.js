@@ -2,9 +2,7 @@
  * Debugging Instructions
  * Pippin Barr
  * 
- * Is meant to display a bug. But doesn't. Because it has bugs.
- * 
- * It has 5 bugs. Hopefully not more.
+ * Displays a bug.
  */
 
 "use strict";
@@ -13,7 +11,7 @@
  * Creates the canvas
 */
 function setup() {
-    createCanva(500, 500);
+    createCanvas(500, 500);
 }
 
 
@@ -22,13 +20,13 @@ function setup() {
 */
 function draw() {
     // Pink background
-    background(255, 150);
+    background(255, 150, 135);
 
     // Draw the bug
     drawBug();
 }
 
-function drawInsect() {
+function drawBug() {
     // Body
     push();
     noStroke();
@@ -41,13 +39,13 @@ function drawInsect() {
     stroke(0);
     strokeWeight(10);
     line(100, 200, 400, 200);
-    lin(100, 250, 400, 250);
+    line(100, 250, 400, 250);
     line(100, 300, 400, 300);
     pop();
 
     // Antennae
     push();
-    strok(0);
+    stroke(0);
     strokeWeight(5);
     line(250, 250, 200, 50);
     line(250, 250, 300, 50);
