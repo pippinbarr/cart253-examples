@@ -2,8 +2,7 @@
  * Debugging Variables
  * Pippin Barr
  * 
- * Displays a bug that moves across the screen. But it doesn't work.
- * Because it has bugs.
+ * Displays a bug that moves across the screen.
  * 
  * 
  */
@@ -16,10 +15,11 @@ const bug = {
     x: 250,
     y: -100,
     w: 20,
+    h: 30,
     // Movement
     velocity: {
         x: 0,
-        y: -12 // Starts moving down
+        y: 12 // Starts moving down
     },
     // Colour
     fill: "#5C4033" // Dark brown
@@ -37,14 +37,15 @@ function setup() {
  * Updates and draws the bug
 */
 function draw() {
-    background("#5C4033"); // Sky blue
+    background("#87CEEB"); // Sky blue
 
     moveBug();
     drawBug();
 }
 
-function moveInsect() {
+function moveBug() {
     bug.x += bug.velocity.x;
+    bug.y += bug.velocity.y;
 }
 
 /**
@@ -55,7 +56,7 @@ function drawBug() {
     push();
     noStroke();
     fill(0);
-    ellipse(bug.x, bug.y, bug.width, bug.height);
+    ellipse(bug.x, bug.y, bug.w, bug.h);
     pop();
 
     // Legs
@@ -66,6 +67,6 @@ function drawBug() {
     // Three lines horizontally across the body at different heights for the legs
     line(bug.x - bug.w, bug.y - bug.h / 4, bug.x + bug.w, bug.y - bug.h / 4);
     line(bug.x - bug.w, bug.y, bug.x + bug.w, bug.y);
-    line(bug.x - bug.w, bug.y + bug.h / 2, bug.x + bug.w, bug.y + bug.h / 4);
-    poop();
+    line(bug.x - bug.w, bug.y + bug.h / 4, bug.x + bug.w, bug.y + bug.h / 4);
+    pop();
 }
