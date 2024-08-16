@@ -13,7 +13,7 @@
  * Creates the canvas
 */
 function setup() {
-    createCanva(500, 500);
+    createCanvas(500, 500);
 }
 
 
@@ -22,16 +22,20 @@ function setup() {
 */
 function draw() {
     // Pink background
-    background(255, 150);
+    background(255, 150, 150);
 
     // Draw the bug
     drawBug();
 }
 
-function drawInsect() {
+/**
+ * Draw the bug
+ */
+function drawBug() {
     drawBody();
+    drawLegs();
     drawAntennae();
-    drawEye();
+    drawEyes();
 }
 
 /**
@@ -63,7 +67,7 @@ function drawLegs() {
  */
 function drawAntennae() {
     push();
-    strok(0);
+    stroke(0);
     strokeWeight(5);
     line(250, 250, 200, 50);
     line(250, 250, 300, 50);
