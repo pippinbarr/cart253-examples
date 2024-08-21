@@ -22,14 +22,14 @@ function setup() {
 */
 function draw() {
     // Pink background
-    background(255, 150, 150);
+    background(255, 150, 170);
 
     // Draw the bug
     drawBug();
 }
 
 /**
- * Draw the bug
+ * Draws the bug
  */
 function drawBug() {
     drawBody();
